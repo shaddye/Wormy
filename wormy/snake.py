@@ -1,19 +1,19 @@
 import pygame
 import random
 
-# Initialize Pygame
+
 pygame.init()
 
-# Set the dimensions of the screen
+
 SCREEN_WIDTH, SCREEN_HEIGHT = 640, 480
 
 # Create the game window
 window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-# Set the title of the game window
+# title of the game window
 pygame.display.set_caption('Wormy')
 
-# Set the font for displaying the score
+# font for displaying the score
 font = pygame.font.SysFont(None, 30)
 
 # Set the colors for the game elements
@@ -33,7 +33,7 @@ direction = "RIGHT"
 food_position = [random.randrange(1, (SCREEN_WIDTH//10)) * 10,
                  random.randrange(1, (SCREEN_HEIGHT//10)) * 10]
 
-# Load the sound effect
+# Load in the sound effect
 eat_sound = pygame.mixer.Sound("chomp.wav")
 
 # Define a function to draw the snake and the food
@@ -42,24 +42,24 @@ def draw_snake(snake_body):
         pygame.draw.rect(window, SNAKE_COLOR, [block[0], block[1], BLOCK_SIZE, BLOCK_SIZE])
 
 def draw_food(food_position):
-    # Load the apple image and scale it to a larger size
+    # Load the apple image
     apple_image = pygame.image.load("apple.png")
     apple_image = pygame.transform.scale(apple_image, (BLOCK_SIZE, BLOCK_SIZE))
 
-    # Draw the apple image at the food position
+    # load the apple image at the food position
     window.blit(apple_image, [food_position[0], food_position[1]])
 
-# Define a function to display the score
+# function to display the score
 def display_score(score):
     score_text = font.render("Score: " + str(score), True, (0, 0, 0))
     window.blit(score_text, [0, 0])
 
-# Define the main game loop
+# defined main game loop
 def game_loop():
     # Set the initial score to 0
     score = 0
 
-    # Set the initial position and direction of the snake
+    # Sets the initial position and direction of the snake
     snake_position = [100, 50]
     snake_body = [[100, 50], [90, 50], [80, 50]]
     direction = "RIGHT"
