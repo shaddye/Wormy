@@ -135,7 +135,7 @@ def game_loop():
         # Control the game FPS
         fps_controller.tick(20)
 
-# Define a function to display the game over message and prompt the user to continue playing or quit
+# function to display the game over message and prompts the user to continue playing or quit
 def game_over():
     # Display the game over message
     game_over_text = font.render("Game Over! Press 1 to try again or 2 to quit.", True, (0, 0, 0))
