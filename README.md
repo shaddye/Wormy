@@ -3,10 +3,15 @@ Wormy is a simple snake game built using Pygame. Navigate your snake to eat food
 Features
 ---
 Classic snake gameplay mechanics
+
 Randomly generated food
+
 Score tracking
+
 Game over screen with restart option
+
 Simple controls for movement
+
 
 
 Requirements
